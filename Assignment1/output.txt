@@ -1,0 +1,51 @@
+Fish swim in streams
+S
+        Noun    fish
+        VPWithPPList
+                Verb    swim
+                PP
+                        Prep    in
+                        Noun    streams
+Probability = 2.1600000000000003e-05
+---------------------------------
+Fish in streams swim
+S
+        NP
+                Noun    fish
+                PP
+                        Prep    in
+                        Noun    streams
+        Verb    swim
+Probability = 0.00011520000000000001
+---------------------------------
+Amy ate fish for dinner
+S
+        Noun    amy
+        VerbAndObject
+                Verb    ate
+                NP
+                        Noun    fish
+                        PP
+                                Prep    for
+                                Noun    dinner
+Probability = 0.00010080000000000001
+---------------------------------
+Amy ate fish for dinner on Tuesday
+S
+        Noun    amy
+        VerbAndObject
+                Verb    ate
+                NP
+                        Noun    fish
+                        PP
+                                Prep    for
+                                NP
+                                        Noun    dinner
+                                        PP
+                                                Prep    on
+                                                Noun    tuesday
+Probability = 1.2902400000000006e-06
+---------------------------------
+Amy ate for
+This sentence cannot be parsed
+---------------------------------
