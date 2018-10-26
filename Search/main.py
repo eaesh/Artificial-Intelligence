@@ -14,7 +14,11 @@ for i in input:
     items.append(knapsack.Item(name, float(value), float(weight)))
 
 # Iterative Deepening Algorithm
-#iterativeDeepening.solve(targetValue, maxWeight, items)
+print("Iterative Deepening")
+iterativeDeepening.solve(targetValue, maxWeight, items)
+
+print() 
 
 # Hill Climbing Algorithm
+print("Hill Climbing")
 hillClimbing.solve(targetValue, maxWeight, items)
