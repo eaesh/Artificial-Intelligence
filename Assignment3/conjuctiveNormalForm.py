@@ -72,10 +72,10 @@ def outputToFile(vertices, clauses):
     for clause in clauses:
         for atom in clause:
             file.write(str((key.index([atom.vertex, atom.time])+1) * (1 if atom.sign else -1)) + ' ')
-        file.write('\n')
-    file.write('0\n')
+        file.write('\n') 
 
     # Write Key to file
+    file.write('0\n')
     for i, k in enumerate(key):
         file.write(str(i+1) + ' ' + k[0] + ' ' + str(k[1]) + '\n')
     
