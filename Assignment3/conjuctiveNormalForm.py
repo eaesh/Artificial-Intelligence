@@ -3,9 +3,9 @@ import propositionalLogic as PL
 # Conjunctive Normal Form
 #   Input: Directed Graph
 #   Output: Propositional Encoding in CNF
-def propositionalEncoding():
+def propositionalEncoding(fileName):
     # Initialize
-    input = open("in/input.txt", "r").read().splitlines()
+    input = open(fileName, "r").read().splitlines()
     clauses = []
     vertices = []
     edges = PL.Edges()
@@ -77,6 +77,6 @@ def outputToFile(vertices, clauses):
     # Write Key to file
     file.write('0\n')
     for i, k in enumerate(key):
-        file.write(str(i+1) + ' ' + k[0] + ' ' + str(k[1]) + '\n')
+        file.write(str(i+1) + ' ' + k[0] + " " + str(k[1]) + '\n')
     
     file.close()
