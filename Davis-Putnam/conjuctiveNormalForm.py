@@ -33,7 +33,6 @@ def proposition1(vertices):
     return [[PL.Atom(True, v, t+1) \
         for t in range(len(vertices))] \
         for v in vertices]
-    
 def proposition2(vertices):
     # Proposition: No pair of vertices are traversed at the same time
     #   i.e. For every time 'T' and each pair of vertices 'U' and 'W', we have the proposition '~UT V ~WT'
@@ -41,9 +40,8 @@ def proposition2(vertices):
         for t in range(len(vertices)) \
         for idx, u in enumerate(vertices) \
         for w in vertices[(idx + 1):]]
-    
 def proposition3(vertices, edges):
-    # Proposition: Cannt travel between two vertices if there is no edge between them
+    # Proposition: Cannot travel between two vertices if there is no edge between them
     #   i.e. For every time 'T' and pair of vertices 'U' and 'W', 
     #      If there is no edge between 'U' and 'W', we have the proposition '~UT V ~W(T+1)'
     return [[PL.Atom(False, u, t+1), PL.Atom(False, w, t+2)] \
@@ -51,17 +49,20 @@ def proposition3(vertices, edges):
         for w in vertices \
         if (u is not w) and (not edges.isIn(u, w)) \
         for t in range(len(vertices)-1)]
-    
 def proposition4(vertices):
-    # Proposition: No vertex is traverse at different times
-    #   i.e. For every time 'T' and all vertices, we have the proposition 'AT V BT V CT V ...'
-    return []
-
+    # Proposition: There is a vertex at every time
+    #   i.e. For every time 'T' and vertices 'U', 'W', 'X', etc, we have the proposition '(U1)T V (U2)T V ... V (UN)T'
+    return [[PL.Atom(True, u, t+1) \
+        for u in vertices] \
+        for t in range(len(vertices))]
 def proposition5(vertices):
     # Proposition: No vertex is traversed more than once
-    #   i.e. For each vertex 'U' and pair of times 'S' and 'T', we have the proposition '~US V ~UT'
-    return []
-    
+    #   i.e. For each vertex 'U' and times 'S' and 'T', we have the proposition '~US V ~UT'
+    return [[PL.Atom(False, u, s+1), PL.Atom(False, u, t+1)] \
+        for u in vertices \
+        for s in range(len(vertices)) \
+        for t in range(s+1, len(vertices))]
+
 def outputToFile(vertices, clauses):
     file = open("out/PropositionalEncoding.txt", "w")
 
