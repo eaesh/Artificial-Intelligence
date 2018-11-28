@@ -1,0 +1,10 @@
+*S +Noun people *VP +Modal can +Verb fish 
+*S +Noun fish *VP +Modal can +Verb people 
+*S +Noun fish *VP +Verb people +Noun can 
+*S +Noun people *VP +Modal can +Verb people 
+*S +Noun fish *VP +Verb can +Noun people 
+*S +Noun fish *VP +Verb people +Noun can 
+*S +Noun people *VP +Verb people +Noun can 
+*S +Noun people *VP +Verb can +Noun fish 
+*S *NP +Noun people +Noun people +Verb fish 
+*S +Noun fish *VP +Modal can +Verb swim
