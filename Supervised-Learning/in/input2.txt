@@ -1,0 +1,20 @@
+*S +Noun dogs *VP +Verb bark +Noun wag
+*S +Noun bark +Verb dogs
+*S *NP +Noun tail +Noun dogs +Verb bark
+*S +Noun tail *VP +Verb wag +Noun bark
+*S +Noun bark *VP +Verb wag +Noun dogs
+*S *NP +Noun bark +Noun tail +Verb dogs
+*S +Noun dogs *VP +Verb tail *NP +Noun tail +Noun dogs
+*S +Noun tail *VP +Verb bark +Noun dogs
+*S +Noun wag *VP +Verb bark +Noun tail 
+*S *NP +Noun wag +Noun dogs *VP +Verb bark +Noun tail
+*S +Noun wag *VP +Verb tail *NP +Noun dogs +Noun tail
+*S +Noun dogs +Verb wag
+*S +Noun tail +Verb wag 
+*S +Noun dogs +Verb bark
+*S *NP +Noun dogs +Noun tail *VP +Verb bark +Noun wag
+*S +Noun tail *VP +Verb bark *NP +Noun dogs +Noun tail
+*S +Noun dogs *VP +Verb wag +Noun tail 
+*S *NP +Noun dogs +Noun tail *VP +Verb wag *NP +Noun bark +Noun tail
+*S +Noun tail *VP +Verb bark +Noun dogs
+*S *NP +Noun dogs +Noun bark +Verb tail 

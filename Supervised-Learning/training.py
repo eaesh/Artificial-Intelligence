@@ -1,3 +1,4 @@
+# Convert sentence to tree in array form
 def sentenceToTree(sentence):
     node = sentence[0]
 
@@ -11,19 +12,21 @@ def sentenceToTree(sentence):
     else:
         return [node, sentence[1:]]
 
-def readTree(tree):
+# Get Rules from tree
+def getRules(tree):
     rules = []
     if len(tree) == 3:
         # Phrase Marker
         rules.append(tree[0])
         rules.append([tree[0], tree[1][0], tree[2][0]])
-        rules += readTree(tree[1]) + readTree(tree[2])
+        rules += getRules(tree[1]) + getRules(tree[2])
     elif len(tree) == 2:
         # Part of Speech
         rules.append(tree[0])
         rules.append([tree[0], tree[1]])
     return rules
 
+# Train program and get probabilities for rules
 def train(newRules):
     occur = dict()
     tRules = dict()
@@ -49,12 +52,3 @@ def train(newRules):
         phraseMarker = rule[0]
         rules.append(rule + [count/occur[phraseMarker]])
     return rules
-
-def printTree(tree, tab = 0):
-    print(tab*'\t', tree[0])
-    tab += 1
-    for t in tree[1:]:
-        if len(t) == 2:
-            print(tab * '\t', t[0], '\t', t[1])
-        else:
-            printTree(t, tab)
